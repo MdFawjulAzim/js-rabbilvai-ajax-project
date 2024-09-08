@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax project</title>
+</head>
+<body>
+    <h1 id="myData"></h1>
+
+
+    
+
+    <script>
+        getProductListFromBackEnd();
+
+        async function getProductListFromBackEnd() {
+            let URL ="https://crud.teamrabbil.com/api/v1/ReadProduct"
+            let myData=document.querySelector("#myData")
+            myData.innerText="Loading.......";
+
+            let res = await fetch (URL);
+            let data =await res.json();
+
+            myData.innerText=JSON.stringify(data);
+            
+        }
+
+
+
+    </script>
+</body>
+</html>
