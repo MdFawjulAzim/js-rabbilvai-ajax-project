@@ -15,7 +15,9 @@
         getProductListFromBackEnd();
 
         async function getProductListFromBackEnd() {
-            let URL ="https://crud.teamrabbil.com/api/v1/ReadProduct"
+
+            try{
+                 let URL ="https://crud.teamrabbil.com/api/v1/ReadProduct"
             let myData=document.querySelector("#myData")
             myData.innerText="Loading.......";
 
@@ -23,6 +25,12 @@
             let data =await res.json();
 
             myData.innerText=JSON.stringify(data);
+            }catch(error){
+                let myData=document.querySelector("#myData")
+                myData.innerText="Something went Wrong!";
+                console.log(error);
+            }
+           
             
         }
 
