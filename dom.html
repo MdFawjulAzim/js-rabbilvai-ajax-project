@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <label for="">User Name</label>
+    <input id="user" type="text" placeholder="User Name">
+    <br><br>
+    <label for="">Password</label>
+    <input id="pass" type="password" placeholder="Password">
+    <br><br>
+    <button type="submit" onclick="onLogin()">Submit</button>
+
+    <script>
+        function onLogin() {
+           
+            let userNameValue = document.getElementById('user').value;
+            let passwordValue = document.getElementById('pass').value;
+
+           
+            let jsonObj = {
+                user_name: userNameValue,
+                password: passwordValue
+            }
+
+            
+            alert(JSON.stringify(jsonObj));
+        }
+    </script>
+</body>
+</html>
